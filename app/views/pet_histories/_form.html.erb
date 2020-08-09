@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :pet_id %>
+    <%= form.select :pet_id, options_for_select(@pets) %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>

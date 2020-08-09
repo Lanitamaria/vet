@@ -15,8 +15,27 @@
   <%= @pet.birthdate %>
 </p>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Altura</th>
+      <th>Peso</th>
+    </tr>
+  </thead>
 
-<table>
+  <tbody>
+  <% @pet.pet_histories.each  do |pet_history| %>
+    <tr>
+      <td><%= pet_history.created_at %></td>
+      <td><%= pet_history.heigth %></td>
+      <td><%= pet_history.weight %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<table class="table">
   <thead>
     <tr>
       <th>Peso promedio</th>
@@ -36,5 +55,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to 'Edit', edit_client_pet_path(@pet) %> |
+<%= link_to 'Back', client_pets_path(@client) %>
